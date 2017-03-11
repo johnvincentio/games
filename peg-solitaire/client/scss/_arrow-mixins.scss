@@ -1,0 +1,39 @@
+
+// based on https://codepen.io/sampeniak/pen/Imhpy
+
+%arrow {
+    content: '';
+    display: inline;
+    border-top: 3px solid $arrow-color;
+    border-right: 3px solid $arrow-color;
+    position: absolute;
+}
+@mixin arrow-sizing($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin up_arrow() {
+    @extend %arrow;
+    top: 5px;
+    left: 42%;
+    @include rotate(-45);
+}
+@mixin right_arrow() {
+    @extend %arrow;
+    top: 45%;
+    right: 5px;
+    @include rotate(45);
+}
+@mixin down_arrow() {
+    @extend %arrow;
+    bottom: 5px;
+    left: 42%;
+    @include rotate(135);
+}
+@mixin left_arrow() {
+    @extend %arrow;
+    top: 45%;
+    left: 5px;
+    @include rotate(-135);
+}

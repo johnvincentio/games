@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <title>TicTacToe</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/game.js"></script>
+
+</head>
+
+<body onload="startGame();">
+    <h1>TicTacToe</h1>
+    <div id="message"></div>
+
+   <table>
+        <tr class="row">
+            <td id="s1" class="square" onclick="nextMove(this);"></td>
+            <td id="s2" class="square" onclick="nextMove(this);"></td>
+            <td id="s3" class="square" onclick="nextMove(this);"></td>
+        </tr>
+        <tr class="row">
+            <td id="s4" class="square" onclick="nextMove(this);"></td>
+            <td id="s5" class="square" onclick="nextMove(this);"></td>
+            <td id="s6" class="square" onclick="nextMove(this);"></td>
+        </tr>
+        <tr class="row">
+            <td id="s7" class="square" onclick="nextMove(this);"></td>
+            <td id="s8" class="square" onclick="nextMove(this);"></td>
+            <td id="s9" class="square" onclick="nextMove(this);"></td>
+        </tr>
+   </table>
+   <a href="javascript:startGame();">Start Game</a>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+
+// Colors
+
+$color-red: red;
+$color-green: green;
+$color-blue: blue;
+
+$color-white: #fff;
+$color-black: #000;
+
+// Body
+
+$body-background-color: $color-white;
+$body-color: #555;
+
+/* ----------------------------------- */
+/* Basic setup */
+/* ----------------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background-color: $body-background-color;
+    color: $body-color;
+    font-family: 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background: white;
+
+    td {
+        border: 1px solid black;
+        font-size: 18pt;
+        font-weight: bold;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+    }
+}
+
+body {
+    background: yellow;
+}
+
+.square {
+
+}

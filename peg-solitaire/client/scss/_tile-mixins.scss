@@ -1,0 +1,25 @@
+
+@function mydivider($size, $cols, $factor: 1) {
+    @return ($size / $cols) * $factor;
+}
+
+@mixin tile-sizing($size, $border-size, $cols: 7) {
+    border: $border-size solid $tile-border-color;
+    $tile_size: mydivider($size, $cols);
+    width: $tile_size;
+    height: $tile_size;
+    line-height: $tile_size;
+}
+
+@mixin peg-sizing($size, $tile-border-size, $cols: 7) {
+    $tile_size: mydivider($size, $cols);
+    $tile_size_no_borders: $tile_size - (2 * $tile-border-size);
+    $peg_size: $tile_size_no_borders * 0.9;
+
+    width: $peg_size;
+    height: $peg_size;
+    line-height: $peg_size;
+    $offset: ($tile_size_no_borders - $peg_size) / 2;
+    top: $offset;
+    left: $offset;
+}

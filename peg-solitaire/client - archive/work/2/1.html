@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Describe what the page is doing">
+        <meta name="keywords" content="load up keywords for search engines">
+        <meta name="author" content="John Vincent">
+        <title>ADD TITLE</title>
+
+        <!-- choose which one -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+
+        <!-- sass usage
+cd resources
+sass --watch scss:css --style expanded
+-->
+
+        <!-- load my own stylesheets -->
+        <link rel="stylesheet" href="scss/1.css">
+
+         <!-- load vendor javascript libraries -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+
+        <script src="js/1.js"></script>
+
+    </head>
+
+<body>
+    <div class="row">
+        <div class="col-lg-2">
+            <div class="panel">
+                <table class="table" id="board">
+                    <caption>Chess Board</caption>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="panel"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+

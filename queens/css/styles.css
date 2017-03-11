@@ -1,0 +1,94 @@
+/* line 9, /Users/jv/Desktop/MyDevelopment/repo_ui_games/brackets/Queens/scss/_setup.scss */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 16, /Users/jv/Desktop/MyDevelopment/repo_ui_games/brackets/Queens/scss/_setup.scss */
+html,
+body {
+  background-color: #c8c8c8;
+  color: #555;
+  font-family: 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* line 26, /Users/jv/Desktop/MyDevelopment/repo_ui_games/brackets/Queens/scss/_setup.scss */
+.clearfix {
+  zoom: 1;
+}
+
+/* line 27, /Users/jv/Desktop/MyDevelopment/repo_ui_games/brackets/Queens/scss/_setup.scss */
+.clearfix:after {
+  content: '.';
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* line 3, /Users/jv/Desktop/MyDevelopment/repo_ui_games/brackets/Queens/scss/styles.scss */
+h1 {
+  text-align: center;
+  font-size: 56px;
+  margin: 20px 0;
+}
+
+/* line 9, /Users/jv/Desktop/MyDevelopment/repo_ui_games/brackets/Queens/scss/styles.scss */
+#message {
+  text-align: center;
+}
+
+/* line 14, /Users/jv/Desktop/MyDevelopment/repo_ui_games/brackets/Queens/scss/styles.scss */
+#solutions ul li {
+  display: none;
+}
+
+/* line 19, /Users/jv/Desktop/MyDevelopment/repo_ui_games/brackets/Queens/scss/styles.scss */
+#board {
+  margin: 30px auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+  background: white;
+}
+
+/* line 25, /Users/jv/Desktop/MyDevelopment/repo_ui_games/brackets/Queens/scss/styles.scss */
+#board td {
+  border: 1px solid black;
+  font-size: 18pt;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+/* line 35, /Users/jv/Desktop/MyDevelopment/repo_ui_games/brackets/Queens/scss/styles.scss */
+#actions {
+  margin: 30px auto;
+}
+
+/* line 37, /Users/jv/Desktop/MyDevelopment/repo_ui_games/brackets/Queens/scss/styles.scss */
+#actions td {
+  font-size: 18pt;
+  font-weight: bold;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  color: link-color;
+}
+
+/* line 45, /Users/jv/Desktop/MyDevelopment/repo_ui_games/brackets/Queens/scss/styles.scss */
+#actions td a {
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+  color: black;
+  background-color: #7fc8c8;
+  padding: 5px 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */

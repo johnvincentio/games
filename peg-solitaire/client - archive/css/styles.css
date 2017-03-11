@@ -1,0 +1,414 @@
+/* ----------------------------------- */
+/* Variables */
+/* ----------------------------------- */
+/* ----------------------------------- */
+/* Mixins */
+/* ----------------------------------- */
+/* ----------------------------------- */
+/* Basic setup */
+/* ----------------------------------- */
+/* line 148, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 155, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+html,
+body {
+  background-color: wheat;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* line 34, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+/* line 39, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* ----------------------------------- */
+/* Board setup */
+/* ----------------------------------- */
+/* line 172, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+main {
+  margin: 0px auto;
+  text-align: center;
+}
+
+/* line 177, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+.board {
+  display: inline-block;
+  margin: 20px auto;
+  border-style: ridge;
+  border-color: #dba861;
+  height: auto;
+}
+
+/* ----------------------------------------------- *
+
+Tiles setup
+
+.outside => not reachable
+
+If reachable, tile is either .occupied or .empty
+
+If .occupied, then tile may also be .draggable
+If .empty, then tile may also be .droppable
+
+* ------------------------------------------------ */
+/* line 200, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+.outside, .empty, .occupied {
+  float: left;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  border: 3px solid white;
+}
+
+/* line 210, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+.outside {
+  background-color: wheat;
+  border: 3px solid wheat;
+}
+
+/* line 218, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+.empty.droppable {
+  cursor: crosshair;
+  background-color: lightgreen;
+  border: 3px inset lightgreen;
+}
+
+/* line 223, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+.empty:not(.droppable) {
+  background-color: white;
+  border: 3px double lightgray;
+}
+
+/* line 232, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+.occupied.draggable {
+  background-color: #1ac0cf;
+  cursor: move;
+  border: 3px outset #1ac0cf;
+}
+
+/* line 236, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+.occupied.draggable div {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 241, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+.occupied:not(.draggable) {
+  background-color: lightgray;
+  border: 3px ridge lightgray;
+}
+
+/* line 244, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+.occupied:not(.draggable) div {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+
+/* ---------------------------------- */
+/* Peg                                */
+/* ---------------------------------- */
+/* line 255, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+.occupied.draggable div, .occupied:not(.draggable) div {
+  border-radius: 50%;
+  background-color: black;
+  box-shadow: 4px 4px 4px #888888;
+  display: inline-block;
+  position: absolute;
+}
+
+/* ---------------------------------- */
+/* New Game Button                    */
+/* ---------------------------------- */
+/* line 269, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+button {
+  font-size: 20px;
+  font-weight: 500;
+  background-color: #dba861;
+  padding: 10px 10px;
+  border-radius: 6px;
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  -ms-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+/* line 277, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+button:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  background-color: #c7801d;
+}
+
+/* ----------------------------------- */
+/* Responsive */
+/* ----------------------------------- */
+@media only screen and (min-width: 140px) {
+  /* line 288, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .board {
+    border-width: 1px;
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (min-width: 260px) {
+  /* line 288, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .board {
+    border-width: 2px;
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (min-width: 440px) {
+  /* line 288, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .board {
+    border-width: 3px;
+    border-radius: 10px;
+  }
+}
+
+@media only screen and (min-width: 140px) {
+  /* line 303, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .outside, .empty, .occupied {
+    width: 19.14286px;
+    height: 19.14286px;
+    line-height: 19.14286px;
+  }
+}
+
+@media only screen and (min-width: 200px) {
+  /* line 303, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .outside, .empty, .occupied {
+    width: 27.71429px;
+    height: 27.71429px;
+    line-height: 27.71429px;
+  }
+}
+
+@media only screen and (min-width: 260px) {
+  /* line 303, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .outside, .empty, .occupied {
+    width: 36.28571px;
+    height: 36.28571px;
+    line-height: 36.28571px;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  /* line 303, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .outside, .empty, .occupied {
+    width: 44.85714px;
+    height: 44.85714px;
+    line-height: 44.85714px;
+  }
+}
+
+@media only screen and (min-width: 380px) {
+  /* line 303, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .outside, .empty, .occupied {
+    width: 53.42857px;
+    height: 53.42857px;
+    line-height: 53.42857px;
+  }
+}
+
+@media only screen and (min-width: 440px) {
+  /* line 303, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .outside, .empty, .occupied {
+    width: 62px;
+    height: 62px;
+    line-height: 62px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  /* line 303, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .outside, .empty, .occupied {
+    width: 70.57143px;
+    height: 70.57143px;
+    line-height: 70.57143px;
+  }
+}
+
+@media only screen and (min-width: 560px) {
+  /* line 303, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .outside, .empty, .occupied {
+    width: 79.14286px;
+    height: 79.14286px;
+    line-height: 79.14286px;
+  }
+}
+
+@media only screen and (min-width: 620px) {
+  /* line 303, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .outside, .empty, .occupied {
+    width: 87.71429px;
+    height: 87.71429px;
+    line-height: 87.71429px;
+  }
+}
+
+@media only screen and (min-width: 680px) {
+  /* line 303, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .outside, .empty, .occupied {
+    width: 96.28571px;
+    height: 96.28571px;
+    line-height: 96.28571px;
+  }
+}
+
+@media only screen and (min-width: 740px) {
+  /* line 303, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .outside, .empty, .occupied {
+    width: 104.28571px;
+    height: 104.28571px;
+    line-height: 104.28571px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  /* line 303, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .outside, .empty, .occupied {
+    width: 110.57143px;
+    height: 110.57143px;
+    line-height: 110.57143px;
+  }
+}
+
+@media only screen and (min-width: 140px) {
+  /* line 318, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .occupied.draggable div, .occupied:not(.draggable) div {
+    width: 9.57143px;
+    height: 9.57143px;
+    top: 4.78571px;
+    left: 4.78571px;
+  }
+}
+
+@media only screen and (min-width: 200px) {
+  /* line 318, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .occupied.draggable div, .occupied:not(.draggable) div {
+    width: 13.85714px;
+    height: 13.85714px;
+    top: 6.92857px;
+    left: 6.92857px;
+  }
+}
+
+@media only screen and (min-width: 260px) {
+  /* line 318, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .occupied.draggable div, .occupied:not(.draggable) div {
+    width: 18.14286px;
+    height: 18.14286px;
+    top: 9.07143px;
+    left: 9.07143px;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  /* line 318, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .occupied.draggable div, .occupied:not(.draggable) div {
+    width: 22.42857px;
+    height: 22.42857px;
+    top: 11.21429px;
+    left: 11.21429px;
+  }
+}
+
+@media only screen and (min-width: 380px) {
+  /* line 318, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .occupied.draggable div, .occupied:not(.draggable) div {
+    width: 26.71429px;
+    height: 26.71429px;
+    top: 13.35714px;
+    left: 13.35714px;
+  }
+}
+
+@media only screen and (min-width: 440px) {
+  /* line 318, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .occupied.draggable div, .occupied:not(.draggable) div {
+    width: 31px;
+    height: 31px;
+    top: 15.5px;
+    left: 15.5px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  /* line 318, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .occupied.draggable div, .occupied:not(.draggable) div {
+    width: 35.28571px;
+    height: 35.28571px;
+    top: 17.64286px;
+    left: 17.64286px;
+  }
+}
+
+@media only screen and (min-width: 560px) {
+  /* line 318, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .occupied.draggable div, .occupied:not(.draggable) div {
+    width: 39.57143px;
+    height: 39.57143px;
+    top: 19.78571px;
+    left: 19.78571px;
+  }
+}
+
+@media only screen and (min-width: 620px) {
+  /* line 318, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .occupied.draggable div, .occupied:not(.draggable) div {
+    width: 43.85714px;
+    height: 43.85714px;
+    top: 21.92857px;
+    left: 21.92857px;
+  }
+}
+
+@media only screen and (min-width: 680px) {
+  /* line 318, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .occupied.draggable div, .occupied:not(.draggable) div {
+    width: 48.14286px;
+    height: 48.14286px;
+    top: 24.07143px;
+    left: 24.07143px;
+  }
+}
+
+@media only screen and (min-width: 740px) {
+  /* line 318, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .occupied.draggable div, .occupied:not(.draggable) div {
+    width: 52.14286px;
+    height: 52.14286px;
+    top: 26.07143px;
+    left: 26.07143px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  /* line 318, /Users/jv/Desktop/MyDevelopment/github/games/peg-solitaire/scss/styles.scss */
+  .occupied.draggable div, .occupied:not(.draggable) div {
+    width: 55.28571px;
+    height: 55.28571px;
+    top: 27.64286px;
+    left: 27.64286px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,171 @@
+
+$body-background-color: #c8c8c8;
+$body-color: #555;
+$board-background-color: #89d7eb;
+$button-background-color: #89d7eb;
+$button-color: #555;
+$piece-color: black;
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin square($size, $cols: 3) {
+    width: $size / $cols;
+    height: $size / $cols;
+    line-height: $size / $cols;
+}
+
+@mixin transform($scale: 1.05) {
+    -webkit-transform: scale($scale);
+    transform: scale($scale);
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+/* ----------------------------------- */
+/* Basic setup */
+/* ----------------------------------- */
+
+* {
+//    box-sizing: padding-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background-color: $body-background-color;
+    color: $body-color;
+    font-family: 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.tile-hover {
+    @include transform();
+    cursor: pointer;
+}
+
+/* ----------------------------------- */
+/* Responsive */
+/* ----------------------------------- */
+
+@media only screen and (min-width: 200px) {
+    $width_200: 200px;
+
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        margin: 20px 0;
+    }
+    #message {
+        text-align: center;
+    }
+    #board {
+        position: relative;
+        margin: 25px auto;
+        width: $width-200;
+        div {
+            @include clearfix;
+            background-color: $board-background-color;
+
+            div {
+                @include square($width_200);
+                color: $piece-color;
+                float: left;
+                border: 1px solid black;
+                text-align: center;
+                font-size: 48px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    #actions {
+        @include clearfix;
+
+        margin: 30px 0;
+        text-align: center;
+        button {
+            color: $button-color;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            background-color: $button-background-color;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+    }
+}
+
+@media only screen and (min-width: 360px) {
+    $width_360: 360px;
+    h1 {
+        font-size: 46px;
+    }
+    #board {
+        width: $width-360;
+        div {
+            div {
+                @include square($width_360);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    $width_480: 480px;
+    h1 {
+        font-size: 56px;
+        margin: 20px 0;
+    }
+    #board {
+        width: $width_480;
+        div {
+            div {
+                @include square($width_480);
+            }
+        }
+    }
+    #actions {
+        button {
+            font-size: 24px;
+        }
+    }
+}
+
+@media only screen and (min-width: 610px) {
+    $width_595: 595px;
+
+    #board {
+        width: $width_595;
+        div {
+            div {
+                @include square($width_595);
+            }
+        }
+    }
+    #actions {
+        button {
+            font-size: 28px;
+        }
+    }
+}

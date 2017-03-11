@@ -1,0 +1,38 @@
+
+// Body
+
+$body-background-color: #c8c8c8;
+$body-color: #555;
+$board-background-color: #89d7eb;
+$button-background-color: #89d7eb;
+$button-color: #555;
+$queen-color: black;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background-color: $body-background-color;
+    color: $body-color;
+    font-family: 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

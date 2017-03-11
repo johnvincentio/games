@@ -1,0 +1,57 @@
+@import 'setup';
+
+h1 {
+    text-align: center;
+    font-size: 56px;
+    margin: 20px 0;
+}
+
+#message {
+    text-align: center;
+}
+
+#board {
+    margin: 30px auto;
+    width: 480px;
+
+    div {
+        @include clearfix;
+
+        div {
+            color: $queen-color;
+            float: left;
+            background-color: $board-background-color;
+            border: 1px solid black;
+            font-size: 18pt;
+            font-weight: bold;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+        }
+    }
+}
+
+#actions {
+    @include clearfix;
+
+    margin: 30px 0;
+    text-align: center;
+    button {
+        color: $button-color;
+        font-size: 18pt;
+        font-weight: bold;
+        text-align: center;
+        background-color: $button-background-color;
+        padding: 10px 15px;
+        border-radius: 20px;
+    }
+    .previous {
+        float: left;
+        margin-left: 10px;
+    }
+    .next {
+        float: right;
+        margin-right: 10px;
+    }
+}

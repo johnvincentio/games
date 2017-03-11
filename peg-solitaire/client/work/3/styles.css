@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#bodyMain {
+    border: 1px solid red;
+/*    width: 100%;*/
+    height: auto;
+}
+
+#body {
+    border: 1px solid green;
+    width: 804px;
+    height: auto;
+    margin: auto;
+}
+
+.bodyLeft {
+/*    border: 1px solid blue;*/
+    background-color: lightblue;
+    float: left;
+    width: 200PX;
+    height: auto;
+}
+
+.bodyRight {
+/*    border: 1px solid orange;*/
+    background-color: lightpink;
+    float: left;
+    width: 300PX;
+    height: auto;
+}

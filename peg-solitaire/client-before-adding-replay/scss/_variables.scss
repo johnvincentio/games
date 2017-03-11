@@ -1,0 +1,27 @@
+
+/* ----------------------------------- */
+/* Variables */
+/* ----------------------------------- */
+
+$background-color: #fffafa;
+
+$board-color: #d3d3d3;
+$board-border-color: #cdc9c9;
+
+//$tile-border-color: white;
+$tile-border-color: $board-color;
+
+$empty-background-color: white;
+$droppable-background-color: lightgreen;
+
+$occupied-background-color: yellow;
+$draggable-background-color: #1ac0cf;
+
+$peg-color-occupied: #00bfff;
+$peg-box-shadow-color: #888888;
+$peg-color-empty: #696969;
+
+$arrow-color: #13507a;
+
+$button-background-color: $board-color;
+$button-hover-background-color: $peg-color-occupied;

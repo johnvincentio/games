@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: #c8c8c8;
+  color: #555;
+  font-family: 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 56px;
+  margin: 20px 0;
+}
+
+#message {
+  text-align: center;
+}
+
+#board {
+  margin: 30px auto;
+  width: 480px;
+}
+#board div:before, #board div:after {
+  content: "";
+  display: table;
+}
+#board div:after {
+  clear: both;
+}
+#board div div {
+  color: black;
+  float: left;
+  background-color: #89d7eb;
+  border: 1px solid black;
+  font-size: 18pt;
+  font-weight: bold;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+}
+
+#actions {
+  margin: 30px 0;
+  text-align: center;
+}
+#actions:before, #actions:after {
+  content: "";
+  display: table;
+}
+#actions:after {
+  clear: both;
+}
+#actions button {
+  color: #555;
+  font-size: 18pt;
+  font-weight: bold;
+  text-align: center;
+  background-color: #89d7eb;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+#actions .previous {
+  float: left;
+  margin-left: 10px;
+}
+#actions .next {
+  float: right;
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */

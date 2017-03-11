@@ -1,0 +1,154 @@
+
+@import "variables";
+@import "mixins";
+@import "tile-mixins";
+@import "arrow-mixins";
+
+/* ----------------------------------- */
+/* Basic setup */
+/* ----------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: $background-color;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+/* ----------------------------------- */
+/* Board setup */
+/* ----------------------------------- */
+
+main {
+    margin: 0px auto;
+    text-align: center;
+}
+
+.board {
+    display: inline-block;
+    background-color: $board-color;
+    border-style: solid;
+    border-color: $board-border-color;
+    border-radius: 50%;
+    height: auto;
+}
+
+/* ---------------------------------- */
+/* Peg                                */
+/* ---------------------------------- */
+
+%peg {
+    display: table-cell;
+    border-radius: 50%;
+}
+
+/* ---------------------------------- */
+/* Tile                               */
+/* ---------------------------------- */
+
+%tile {
+    float: left;
+    display: table;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 50%;
+}
+
+/* ----------------------------------------------- *
+
+Tiles setup
+
+.outside => not reachable
+
+If reachable, tile is either .occupied or .empty
+
+If .occupied, then tile may also be .draggable
+If .empty, then tile may also be .droppable
+
+* ------------------------------------------------ */
+
+.outside {
+    @extend %tile;
+    visibility: hidden;
+}
+
+.empty {
+    @extend %tile;
+    &.droppable {
+        cursor: crosshair;
+        .inner {
+            @extend %peg;
+            @include opacity(1);
+            background-color: $peg-color-empty;
+        }
+    }
+    &:not(.droppable) {
+        .inner {
+            @extend %peg;
+            @include opacity(0.6);
+            background-color: $peg-color-empty;
+        }
+    }
+}
+
+.occupied {
+    @extend %tile;
+
+    &.draggable {
+        cursor: move;
+        .inner {
+            @extend %peg;
+            @include opacity(1);
+            background-color: $peg-color-occupied;
+            .up_move {
+                @include up_arrow();
+            }
+            .right_move {
+                @include right_arrow();
+            }
+            .down_move {
+                @include down_arrow();
+            }
+            .left_move {
+                @include left_arrow();
+            }
+        }
+    }
+    &:not(.draggable) {
+        .inner {
+            @extend %peg;
+            @include opacity(0.3);
+            background-color: $peg-color-occupied;
+        }
+    }
+}
+
+/* ---------------------------------- */
+/* New Game Button                    */
+/* ---------------------------------- */
+
+button {
+    background-color: $button-background-color;
+    border-radius: 6px;
+    &:hover {
+        cursor: pointer;
+        @include scale(1.05);
+        @include transition(background-color .5s ease);
+        background-color: $button-hover-background-color;
+    }
+}
+
+@import "responsive";

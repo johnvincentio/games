@@ -1,0 +1,60 @@
+@import 'setup';
+
+h1 {
+    text-align: center;
+    font-size: 56px;
+    margin: 20px 0;
+}
+
+#message {
+    text-align: center;
+}
+
+#solutions {
+    ul li {
+        display: none;
+    }
+}
+
+#board {
+    margin: 30px auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background: white;
+
+    td {
+        border: 1px solid black;
+        font-size: 18pt;
+        font-weight: bold;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+    }
+}
+
+#actions {
+    margin: 30px auto;
+    td {
+        font-size: 18pt;
+        font-weight: bold;
+        width: 40px;
+        height: 20px;
+        text-align: center;
+        color: link-color;
+
+        a {
+            text-decoration: none;
+            display: block;
+            font-size: 18px;
+            color: $link-color;
+            background-color: $link-background-color;
+            padding: 5px 10px;
+        }
+    }
+}
+
+
+
+
+
+
